@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prontuário Psicológico</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="page-frame">
+        <header class="topbar">
+            <div class="brand">
+                <div class="logo-mark">P</div>
+                <div>
+                    <strong>PsicoProntuário</strong>
+                    <span>Gestão segura de pacientes</span>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <a href="#inicio">Início</a>
+                <a href="#registro">Registro</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero" id="inicio">
+                <div class="hero-copy">
+                    <p class="eyebrow">Sistema de prontuário clínico</p>
+                    <h1>Organização segura para profissionais de psicologia</h1>
+                    <p>Um ambiente leve e intuitivo para cadastrar anamneses, avaliações psicológicas, histórico de atendimentos e dados pessoais de pacientes.</p>
+                    <div class="hero-actions">
+                        <a href="#registro" class="btn btn-primary">Cadastrar paciente</a>
+                        <a href="#historico" class="btn btn-secondary">Ver histórico</a>
+                    </div>
+                </div>
+                <div class="hero-panel">
+                    <div class="panel-card">
+                        <h3>Confiança e agilidade</h3>
+                        <p>Dados organizados por clínica e modalidade, com foco em velocidade e fácil recuperação.</p>
+                    </div>
+                    <div class="panel-card highlight">
+                        <h3>Proteção na nuvem</h3>
+                        <p>Pronto para sincronização com nuvem e backup para que nada seja perdido.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="record" id="registro">
+                <div class="section-header">
+                    <h2>Registrar dados do paciente</h2>
+                    <p>Preencha os campos e salve o prontuário com rapidez e segurança.</p>
+                </div>
+                <div class="record-grid">
+                    <form id="patient-form" class="record-form">
+                        <h3>Dados pessoais e clínicos</h3>
+                        <div class="field-row">
+                            <label>Nome do paciente</label>
+                            <input type="text" id="patient-name" placeholder="Nome completo" required />
+                        </div>
+                        <div class="field-row">
+                            <label>Data de nascimento</label>
+                            <input type="date" id="patient-birth" required />
+                        </div>
+                        <div class="field-row">
+                            <label>Clínica</label>
+                            <input type="text" id="patient-clinic" placeholder="Clínica ou consultório" required />
+                        </div>
+                        <div class="field-row split">
+                            <div>
+                                <label>Modalidade</label>
+                                <select id="patient-mode" required>
+                                    <option value="">Selecione</option>
+                                    <option value="Presencial">Presencial</option>
+                                    <option value="Online">Online</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>Especialidade do profissional</label>
+                                <input type="text" id="patient-specialty" placeholder="Ex: Psicologia Clínica" required />
+                            </div>
+                        </div>
+                        <div class="field-row">
+                            <label>Observações rápidas</label>
+                            <textarea id="patient-notes" rows="4" placeholder="Breve descrição das necessidades do paciente"></textarea>
+                        </div>
+                        <div class="field-row">
+                            <label>Anexar documento</label>
+                            <input type="file" id="patient-file" />
+                            <small>Os nomes de arquivo serão guardados como referência.</small>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Salvar prontuário</button>
+                    </form>
+
+                    <form id="anamnesis-form" class="record-form">
+                        <h3>Cadastro de anamneses</h3>
+                        <div class="field-row">
+                            <label>Paciente</label>
+                            <input type="text" id="anamnese-name" placeholder="Nome do paciente" required />
+                        </div>
+                        <div class="field-row">
+                            <label>Data da anamnese</label>
+                            <input type="date" id="anamnese-date" required />
+                        </div>
+                        <div class="field-row">
+                            <label>Descrição da anamnese</label>
+                            <textarea id="anamnese-notes" rows="5" placeholder="Relate o histórico, motivos e queixas"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-secondary">Cadastrar anamnese</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="history" id="historico">
+                <div class="section-header">
+                    <h2>Histórico de pacientes</h2>
+                    <p>Aqui você encontra cadastro, anamneses e documentos organizados por paciente.</p>
+                </div>
+                <div class="history-summary">
+                    <div class="summary-card">
+                        <span class="summary-number" id="summary-patients">0</span>
+                        <p>Pacientes cadastrados</p>
+                    </div>
+                    <div class="summary-card">
+                        <span class="summary-number" id="summary-anamneses">0</span>
+                        <p>Anamneses registradas</p>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Paciente</th>
+                                <th>Clínica</th>
+                                <th>Modalidade</th>
+                                <th>Especialidade</th>
+                                <th>Documento</th>
+                            </tr>
+                        </thead>
+                        <tbody id="patient-table-body">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Paciente</th>
+                                <th>Data</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+                        <tbody id="anamnesis-table-body">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>PsicoProntuário © 2026 - Sistema de prontuário clínico para psicólogos.</p>
+        </footer>
+    </div>
+</body>
+</html>
