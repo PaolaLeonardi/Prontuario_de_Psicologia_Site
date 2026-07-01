@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avaliações Psicológicas | PsicoProntuário</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="avaliacoes">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo-mark">P</div>
+        <div>
+          <strong>PsicoProntuário</strong>
+          <span>Fluxo clínico</span>
+        </div>
+      </div>
+      <nav class="side-nav">
+        <a href="dashboard.html" data-nav>Dashboard</a>
+        <a href="pacientes.html" data-nav>Pacientes</a>
+        <a href="perfil-paciente.html" data-nav>Perfil do paciente</a>
+        <a href="sessoes.html" data-nav>Sessões</a>
+        <a href="anamnese.html" data-nav>Anamnese</a>
+        <a href="avaliacoes.html" data-nav>Avaliações Psicológicas</a>
+        <a href="documentos.html" data-nav>Documentos</a>
+        <a href="historico.html" data-nav>Histórico</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Acompanhamento clínico</p>
+          <h1>Avaliações Psicológicas</h1>
+        </div>
+        <div class="user-bar">
+          <span id="user-badge">Usuário</span>
+          <button id="logout-button" class="btn btn-secondary" type="button">Sair</button>
+        </div>
+      </header>
+
+      <section class="card">
+        <p id="patient-summary"></p>
+        <form id="assessment-form" class="stack-form">
+          <div class="field-row">
+            <label>Data</label>
+            <input id="assessment-date" type="date" required />
+          </div>
+          <div class="field-row">
+            <label>Descrição da avaliação</label>
+            <textarea id="assessment-description" rows="6" placeholder="Descreva a avaliação psicológica"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Salvar avaliação</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Histórico de avaliações</h2>
+        <div id="assessment-list" class="list-stack"></div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pacientes | PsicoProntuário</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="pacientes">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo-mark">P</div>
+        <div>
+          <strong>PsicoProntuário</strong>
+          <span>Fluxo clínico</span>
+        </div>
+      </div>
+      <nav class="side-nav">
+        <a href="dashboard.html" data-nav>Dashboard</a>
+        <a href="pacientes.html" data-nav>Pacientes</a>
+        <a href="perfil-paciente.html" data-nav>Perfil do paciente</a>
+        <a href="sessoes.html" data-nav>Sessões</a>
+        <a href="anamnese.html" data-nav>Anamnese</a>
+        <a href="avaliacoes.html" data-nav>Avaliações Psicológicas</a>
+        <a href="documentos.html" data-nav>Documentos</a>
+        <a href="historico.html" data-nav>Histórico</a>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Gestão de pacientes</p>
+          <h1>Pacientes</h1>
+        </div>
+        <div class="user-bar">
+          <span id="user-badge">Usuário</span>
+          <button id="logout-button" class="btn btn-secondary" type="button">Sair</button>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2>Novo paciente</h2>
+        <form id="patient-form" class="stack-form">
+          <div class="field-row">
+            <label>Nome do paciente</label>
+            <input id="patient-name" type="text" placeholder="Nome completo" required />
+          </div>
+          <div class="field-row split">
+            <div>
+              <label>Data de nascimento</label>
+              <input id="patient-birth" type="date" />
+            </div>
+            <div>
+              <label>Clínica</label>
+              <input id="patient-clinic" type="text" placeholder="Clínica ou consultório" required />
+            </div>
+          </div>
+          <div class="field-row split">
+            <div>
+              <label>Modalidade</label>
+              <select id="patient-mode" required>
+                <option value="Presencial">Presencial</option>
+                <option value="Online">Online</option>
+              </select>
+            </div>
+            <div>
+              <label>Especialidade</label>
+              <input id="patient-specialty" type="text" placeholder="Ex.: Psicologia Clínica" required />
+            </div>
+          </div>
+          <div class="field-row">
+            <label>Observações</label>
+            <textarea id="patient-notes" rows="4" placeholder="Resumo clínico e necessidades"></textarea>
+          </div>
+          <div class="field-row">
+            <label>Documento</label>
+            <input id="patient-file" type="text" placeholder="Nome do arquivo ou documento" />
+          </div>
+          <button class="btn btn-primary" type="submit">Salvar paciente</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Lista de pacientes</h2>
+        <div id="patient-list" class="list-stack"></div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | PsicoProntuário</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="auth-page" data-page="login">
+  <main class="auth-card">
+    <div class="brand">
+      <div class="logo-mark">P</div>
+      <div>
+        <strong>PsicoProntuário</strong>
+        <span>Login seguro</span>
+      </div>
+    </div>
+    <h1>Entre no sistema</h1>
+    <p>Use qualquer usuário e senha para acessar a versão local.</p>
+    <form id="login-form" class="stack-form">
+      <label>
+        Usuário
+        <input id="username" type="text" placeholder="Digite o usuário" required />
+      </label>
+      <label>
+        Senha
+        <input id="password" type="password" placeholder="Digite a senha" required />
+      </label>
+      <button class="btn btn-primary" type="submit">Entrar</button>
+    </form>
+    <p id="login-message" class="message"></p>
+  </main>
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
