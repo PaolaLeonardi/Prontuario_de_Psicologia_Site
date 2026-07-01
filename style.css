@@ -1,0 +1,419 @@
+/* Estilo principal do site de prontuário clínico */
+:root {
+    color-scheme: light;
+    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #2f3f48;
+    background: #f8f3ea;
+    accent-color: #7fa78d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    background: linear-gradient(180deg, #f7f3ec 0%, #f2f5f4 100%);
+}
+
+.page-frame {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-mark {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    background: #dbe4dc;
+    color: #2f3f48;
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.brand strong {
+    display: block;
+    font-size: 1.1rem;
+}
+
+.brand span {
+    font-size: 0.9rem;
+    color: #556069;
+}
+
+.main-nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.main-nav a {
+    color: #2f3f48;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 28px;
+    align-items: start;
+    margin-bottom: 48px;
+}
+
+.hero-copy {
+    padding: 30px 24px;
+    background: rgba(255,255,255,.96);
+    border-radius: 28px;
+    box-shadow: 0 18px 45px rgba(47,63,72,0.08);
+}
+
+.eyebrow {
+    margin: 0 0 14px;
+    display: inline-block;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #7d8b7e;
+}
+
+.hero-copy h1 {
+    margin: 0;
+    font-size: clamp(2rem, 2.5vw, 3rem);
+    line-height: 1.05;
+}
+
+.hero-copy p {
+    margin: 20px 0;
+    max-width: 680px;
+    line-height: 1.8;
+    color: #4f5d60;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 20px;
+    border-radius: 999px;
+    font-weight: 700;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: #7fa78d;
+    color: #ffffff;
+    box-shadow: 0 12px 24px rgba(127,167,141,0.25);
+}
+
+.btn-secondary {
+    background: #ffffff;
+    color: #2f3f48;
+    border: 1px solid #d4d8d4;
+}
+
+.hero-panel {
+    display: grid;
+    gap: 18px;
+}
+
+.panel-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 18px 32px rgba(47,63,72,0.06);
+}
+
+.panel-card.highlight {
+    background: #e8f1ee;
+}
+
+.panel-card h3 {
+    margin-top: 0;
+}
+
+.features,
+.team,
+.record,
+.history,
+.about {
+    margin-bottom: 44px;
+}
+
+.features article,
+.section-header {
+    margin-bottom: 24px;
+}
+
+.features article h2,
+.section-header h2 {
+    margin: 0 0 12px;
+    font-size: 1.8rem;
+}
+
+.features article ul {
+    margin: 0;
+    padding-left: 22px;
+    color: #556069;
+}
+
+.features article li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.feature-card {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 24px;
+    box-shadow: 0 10px 22px rgba(47,63,72,0.07);
+}
+
+.feature-card h3 {
+    margin-top: 0;
+}
+
+.team-grid,
+.record-grid,
+.about-grid,
+.history-summary {
+    display: grid;
+    gap: 18px;
+}
+
+.team-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.team-card {
+    background: rgba(255,255,255,0.96);
+    padding: 24px;
+    border-radius: 28px;
+    box-shadow: 0 10px 22px rgba(47,63,72,0.06);
+    text-align: center;
+}
+
+.team-photo {
+    width: 100%;
+    min-height: 200px;
+    border-radius: 22px;
+    margin-bottom: 18px;
+    background-size: cover;
+    background-position: center;
+}
+
+.photo-1 { background: linear-gradient(135deg, #e2e9e5 0%, #b5c9c0 100%); }
+.photo-2 { background: linear-gradient(135deg, #dee3ec 0%, #a7b7c5 100%); }
+.photo-3 { background: linear-gradient(135deg, #e8efe9 0%, #c2d1c4 100%); }
+
+.team-card h3 {
+    margin: 0 0 6px;
+}
+
+.team-card p {
+    margin: 0;
+    color: #646f74;
+}
+
+.section-header p,
+.about-grid div p,
+.history-summary .summary-card p {
+    color: #59686f;
+    line-height: 1.8;
+}
+
+.record-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+.record-form {
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 26px;
+    box-shadow: 0 14px 30px rgba(47,63,72,0.06);
+}
+
+.record-form h3 {
+    margin-top: 0;
+}
+
+.field-row {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.field-row label {
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.field-row input,
+.field-row select,
+.field-row textarea {
+    border: 1px solid #d7dbd6;
+    border-radius: 14px;
+    padding: 14px 16px;
+    font-size: 1rem;
+    background: #fbfbfb;
+    color: #28353a;
+}
+
+.field-row small {
+    margin-top: 6px;
+    color: #7d8b7e;
+}
+
+.field-row.split {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.history-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.summary-card {
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 24px;
+    box-shadow: 0 14px 30px rgba(47,63,72,0.05);
+}
+
+.summary-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4b6a63;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    margin-top: 18px;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 10px 22px rgba(47,63,72,0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 620px;
+}
+
+th, td {
+    padding: 16px 18px;
+    text-align: left;
+    border-bottom: 1px solid #eef1ef;
+}
+
+th {
+    background: #f3f6f4;
+    color: #4b5d63;
+    font-weight: 700;
+}
+
+td {
+    color: #4f5d60;
+}
+
+.about-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.about-grid div {
+    background: rgba(255,255,255,0.95);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 10px 22px rgba(47,63,72,0.05);
+}
+
+.about-grid h3 {
+    margin-top: 0;
+}
+
+footer {
+    margin: 24px 0 0;
+    text-align: center;
+    color: #62747b;
+}
+
+@media (max-width: 980px) {
+    .hero,
+    .feature-grid,
+    .team-grid,
+    .record-grid,
+    .history-summary,
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .field-row.split {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 680px) {
+    .page-frame {
+        padding: 16px;
+    }
+
+    .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .hero-copy,
+    .panel-card,
+    .record-form,
+    .about-grid div {
+        padding: 20px;
+    }
+}
